@@ -8,6 +8,40 @@
 
 > Market Evidence Diagnostic — open-source skill для проверки утверждений о жизнеспособности бизнес-модели через рынок. Research pack для AI-агентов и консультантов: реальная проблема, альтернативы (конкуренты), доказательства из каналов коммуникации и социальных сетей. Apache 2.0, v0.3.0-rc1.
 
+## Установка и использование
+
+Скилл живёт под именем **`ds_market-evidence`** — префикс `ds_` делает имя уникальным среди чужих скиллов, в чате достаточно сказать: «запусти ds_market-evidence для …».
+
+```bash
+git clone https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic.git
+mkdir -p ~/.claude/skills/ds_market-evidence
+cp market-evidence-diagnostic/skill/SKILL.md ~/.claude/skills/ds_market-evidence/SKILL.md
+cp -r market-evidence-diagnostic/skill/references ~/.claude/skills/ds_market-evidence/ 2>/dev/null
+```
+
+Все скиллы Discovery System — с префиксом **`ds_`**: `ds_pnl-check`, `ds_spiral-maturity`, `ds_geo-audit`, `ds_market-evidence`, `ds_warm-lead-parser`, `ds_content-radar`. Комплект и связка — [discovery-system.ru](https://discovery-system.ru).## Быстрый старт (30 минут)
+
+1. Скопируйте `examples/fictional-static-export/` в новую рабочую папку.
+2. Заполните `object-card.md`: **одна роль, одна ситуация, одна работа и текущая альтернатива**.
+3. Заполните `channel-inventory.csv`. Нужен минимум один проверенный канал каждой стороны: object-side, buyer-side и alternative-side.
+4. Найдите минимум три реальных alternatives и внесите их в `alternative-map.csv`.
+5. В `external-evidence-ledger.csv` записывайте только наблюдения с источником, датой, классом, альтернативным объяснением и колонкой `what_it_does_not_prove`.
+6. Запустите проверку: `python skill/scripts/validate_diagnostic.py path/to/your-pack` (strict evidence gate — по умолчанию; `--legacy` для старых pack'ов)
+7. Прогоните red-team: `python skill/scripts/test_adversarial.py`
+
+**Результат:** Object card → Channel inventory → Evidence ledger → Verdict. Каждый вывод — источник + дата. Если проверка не проходит — market-readiness verdict выдавать нельзя.
+
+---
+
+**Автор:** [Виктор Зайцев](https://vospri9tielandingpage.vercel.app/) — продуктовый стратег и консультант, Санкт-Петербург.
+[![Лицензия: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE) [t.me/discoverysystem](https://t.me/discoverysystem)
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="Apache 2.0"/>
+  <img src="https://img.shields.io/badge/status-v0.3.0--rc1-yellow.svg" alt="v0.3.0-rc1"/>
+  <img src="https://img.shields.io/badge/evidence-first-8b5cf6.svg" alt="evidence-first"/>
+</p>
+
 ## What is Market Evidence Diagnostic?
 
 Market Evidence Diagnostic is an open-source research skill for AI agents and product consultants. It checks whether business-model claims survive contact with market evidence — by collecting a structured research pack from multiple channels, separating self-claim from independent observation, and producing a verdict tied to sources and dates.
@@ -112,6 +146,15 @@ Companies easily mistake their own website, a launch post, or subscriber count f
 
 > **Open-source skill для проверки утверждений бизнес-модели через рынок, альтернативы и доказательства из разных каналов.**
 
+## Проверка на реальных рыночных данных
+
+Диагностика прогнана на реальных бизнес-моделях рынка — не на синтетике. Полный
+разбор с вердиктами, покрытием правил и воспроизводимыми командами: **[EVAL.md](EVAL.md)**.
+
+Бенчмарк против наивного метода на реальных данных: **[BENCHMARK.md](BENCHMARK.md)**.
+
+
+
 ## Кому это нужно
 
 - **Product-консультант или студия** — превращает клиентский brief в воспроизводимый research pack, не продавая «стратегию» на доверии.
@@ -119,40 +162,6 @@ Companies easily mistake their own website, a launch post, or subscriber count f
 - **Venture studio, акселератор, product/innovation lead** — нужен вердикт: что рынок уже позволяет утверждать, а какие утверждения преждевременны.
 
 **Статус:** `v0.3.0-rc1` — ищем 3–5 design partner runs до v1.0.0.
-
-## Установка и использование
-
-Скилл живёт под именем **`ds_market-evidence`** — префикс `ds_` делает имя уникальным среди чужих скиллов, в чате достаточно сказать: «запусти ds_market-evidence для …».
-
-```bash
-git clone https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic.git
-mkdir -p ~/.claude/skills/ds_market-evidence
-cp market-evidence-diagnostic/skill/SKILL.md ~/.claude/skills/ds_market-evidence/SKILL.md
-cp -r market-evidence-diagnostic/skill/references ~/.claude/skills/ds_market-evidence/ 2>/dev/null
-```
-
-Все скиллы Discovery System — с префиксом **`ds_`**: `ds_pnl-check`, `ds_spiral-maturity`, `ds_geo-audit`, `ds_market-evidence`, `ds_warm-lead-parser`, `ds_content-radar`. Комплект и связка — [discovery-system.ru](https://discovery-system.ru).## Быстрый старт (30 минут)
-
-1. Скопируйте `examples/fictional-static-export/` в новую рабочую папку.
-2. Заполните `object-card.md`: **одна роль, одна ситуация, одна работа и текущая альтернатива**.
-3. Заполните `channel-inventory.csv`. Нужен минимум один проверенный канал каждой стороны: object-side, buyer-side и alternative-side.
-4. Найдите минимум три реальных alternatives и внесите их в `alternative-map.csv`.
-5. В `external-evidence-ledger.csv` записывайте только наблюдения с источником, датой, классом, альтернативным объяснением и колонкой `what_it_does_not_prove`.
-6. Запустите проверку: `python skill/scripts/validate_diagnostic.py path/to/your-pack` (strict evidence gate — по умолчанию; `--legacy` для старых pack'ов)
-7. Прогоните red-team: `python skill/scripts/test_adversarial.py`
-
-**Результат:** Object card → Channel inventory → Evidence ledger → Verdict. Каждый вывод — источник + дата. Если проверка не проходит — market-readiness verdict выдавать нельзя.
-
----
-
-**Автор:** [Виктор Зайцев](https://vospri9tielandingpage.vercel.app/) — продуктовый стратег и консультант, Санкт-Петербург.
-[![Лицензия: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE) [t.me/discoverysystem](https://t.me/discoverysystem)
-
-<p align="center">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="Apache 2.0"/>
-  <img src="https://img.shields.io/badge/status-v0.3.0--rc1-yellow.svg" alt="v0.3.0-rc1"/>
-  <img src="https://img.shields.io/badge/evidence-first-8b5cf6.svg" alt="evidence-first"/>
-</p>
 
 ## Зачем это нужно
 
@@ -169,13 +178,6 @@ cp -r market-evidence-diagnostic/skill/references ~/.claude/skills/ds_market-evi
 | Чего ещё не хватает | Чёткий evidence gap: внешний источник или минимальные данные от владельца. |
 
 Результат — **не совет "что делать дальше" и не прогноз выручки**. Это ограниченный verdict: что рынок уже позволяет утверждать, что объект доказал сам и какие утверждения пока преждевременны.
-
-## Проверка на реальных рыночных данных
-
-Диагностика прогнана на реальных бизнес-моделях рынка — не на синтетике. Полный
-разбор с вердиктами, покрытием правил и воспроизводимыми командами: **[EVAL.md](EVAL.md)**.
-
-Бенчмарк против наивного метода на реальных данных: **[BENCHMARK.md](BENCHMARK.md)**.
 
 ## Какие каналы учитываются
 
