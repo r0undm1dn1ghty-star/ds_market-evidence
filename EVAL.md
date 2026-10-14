@@ -42,7 +42,7 @@
 ## Проверка
 
 ```bash
-git clone https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic && cd ds_market-evidence
+git clone https://github.com/r0undm1dn1ghty-star/ds_market-evidence && cd ds_market-evidence
 python integrations/kit/skillkit.py --json --input \
   '{"claims":{"headline":"GMV +40%"},"evidence":[{"source":"otzovik","source_class":"independent_behavior","supports":1},{"source":"markswebb","source_class":"independent_third_party","supports":1}]}'
 # -> switch_supported, medium, 2 независимых

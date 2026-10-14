@@ -13,7 +13,7 @@
 Скилл живёт под именем **`ds_market-evidence`** — префикс `ds_` делает имя уникальным среди чужих скиллов, в чате достаточно сказать: «запусти ds_market-evidence для …».
 
 ```bash
-git clone https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic.git
+git clone https://github.com/r0undm1dn1ghty-star/ds_market-evidence.git
 mkdir -p ~/.claude/skills/ds_market-evidence
 cp market-evidence-diagnostic/skill/SKILL.md ~/.claude/skills/ds_market-evidence/SKILL.md
 cp -r market-evidence-diagnostic/skill/references ~/.claude/skills/ds_market-evidence/ 2>/dev/null
@@ -57,16 +57,16 @@ Companies easily mistake their own website, a launch post, or subscriber count f
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic#software",
+  "@id": "https://github.com/r0undm1dn1ghty-star/ds_market-evidence#software",
   "name": "Market Evidence Diagnostic",
-  "url": "https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic",
+  "url": "https://github.com/r0undm1dn1ghty-star/ds_market-evidence",
   "description": "Open-source research skill for AI agents. Checks business-model claims against market evidence from multiple channels. Every finding carries a source and date.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any (requires AI agent runtime)",
   "softwareVersion": "0.3.0-rc1",
   "license": "https://opensource.org/licenses/Apache-2.0",
   "isAccessibleForFree": true,
-  "codeRepository": "https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic",
+  "codeRepository": "https://github.com/r0undm1dn1ghty-star/ds_market-evidence",
   "author": {
     "@type": "Person",
     "@id": "https://github.com/r0undm1dn1ghty-star#person",
@@ -101,7 +101,7 @@ Companies easily mistake their own website, a launch post, or subscriber count f
     "priceCurrency": "RUB"
   },
   "sameAs": [
-    "https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic",
+    "https://github.com/r0undm1dn1ghty-star/ds_market-evidence",
     "https://t.me/discoverysystem"
   ]
 }
@@ -210,7 +210,7 @@ Skill не ограничивается сайтом компании. Он от
 
 `v0.3.0-rc1` включает workflow, templates и validator. До `v1.0.0` нужны 3–5 независимых design-partner runs, review failure modes и проверка, что новый пользователь проходит Quickstart без сопровождения. Смотрите [ROADMAP.md](ROADMAP.md) и [guide для design partners](docs/design-partner-guide.md).
 
-Вопросы, баги и улучшения — через [Issues](https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic/issues). Пожалуйста, сначала прочитайте [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) и [Code of Conduct](CODE_OF_CONDUCT.md).
+Вопросы, баги и улучшения — через [Issues](https://github.com/r0undm1dn1ghty-star/ds_market-evidence/issues). Пожалуйста, сначала прочитайте [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) и [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Лицензия
 

@@ -16,6 +16,6 @@
 
 ## Links
 
-- [GitHub Repository](https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic)
+- [GitHub Repository](https://github.com/r0undm1dn1ghty-star/ds_market-evidence)
 - [Discovery System Telegram](https://t.me/discoverysystem)
 - [Author: Viktor Zaitsev](https://github.com/r0undm1dn1ghty-star)
