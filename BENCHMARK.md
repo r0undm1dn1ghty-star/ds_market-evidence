@@ -26,7 +26,7 @@
 
 ```bash
 git clone https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic
-cd market-evidence-diagnostic
+cd ds_market-evidence
 echo '{"claims":{"h":"+40%"},"evidence":[{"source":"a","source_class":"independent_third_party","supports":1},{"source":"b","source_class":"independent_behavior","supports":1}]}' \
   | python integrations/kit/skillkit.py --json
 ```

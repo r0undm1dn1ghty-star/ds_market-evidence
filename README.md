@@ -1,4 +1,6 @@
-# Market Evidence Diagnostic
+# ds_market-evidence
+
+**Market Evidence Diagnostic**
 
 <div align="center">
 <img src="assets/banner.svg" alt="Discovery System — Market Evidence — вердикт с источниками и датами" width="100%">
@@ -118,7 +120,18 @@ Companies easily mistake their own website, a launch post, or subscriber count f
 
 **Статус:** `v0.3.0-rc1` — ищем 3–5 design partner runs до v1.0.0.
 
-## Быстрый старт (30 минут)
+## Установка и использование
+
+Скилл живёт под именем **`ds_market-evidence`** — префикс `ds_` делает имя уникальным среди чужих скиллов, в чате достаточно сказать: «запусти ds_market-evidence для …».
+
+```bash
+git clone https://github.com/r0undm1dn1ghty-star/market-evidence-diagnostic.git
+mkdir -p ~/.claude/skills/ds_market-evidence
+cp market-evidence-diagnostic/skill/SKILL.md ~/.claude/skills/ds_market-evidence/SKILL.md
+cp -r market-evidence-diagnostic/skill/references ~/.claude/skills/ds_market-evidence/ 2>/dev/null
+```
+
+Все скиллы Discovery System — с префиксом **`ds_`**: `ds_pnl-check`, `ds_spiral-maturity`, `ds_geo-audit`, `ds_market-evidence`, `ds_warm-lead-parser`, `ds_content-radar`. Комплект и связка — [discovery-system.ru](https://discovery-system.ru).## Быстрый старт (30 минут)
 
 1. Скопируйте `examples/fictional-static-export/` в новую рабочую папку.
 2. Заполните `object-card.md`: **одна роль, одна ситуация, одна работа и текущая альтернатива**.

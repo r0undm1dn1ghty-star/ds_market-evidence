@@ -97,7 +97,7 @@ result = skillkit.run({"text": "..."})     # чистый dict
 ```json
 {
   "mcpServers": {
-    "market-evidence-diagnostic": { "command": "python", "args": ["/абсолютный/путь/integrations/mcp_server.py"] }
+    "ds_market-evidence": { "command": "python", "args": ["/абсолютный/путь/integrations/mcp_server.py"] }
   }
 }
 ```
