@@ -1,6 +1,8 @@
-> Проверка, выживет ли твоя бизнес-модель — на фактах рынка, а не на вере.
-
 # Market Evidence Diagnostic
+
+<div align="center">
+<img src="assets/banner.svg" alt="Discovery System — Market Evidence — вердикт с источниками и датами" width="100%">
+</div>
 
 > Market Evidence Diagnostic — open-source skill для проверки утверждений о жизнеспособности бизнес-модели через рынок. Research pack для AI-агентов и консультантов: реальная проблема, альтернативы (конкуренты), доказательства из каналов коммуникации и социальных сетей. Apache 2.0, v0.3.0-rc1.
 
